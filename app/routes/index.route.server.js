@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { helloHTML, helloNODEJs } from "../controllers/index.server.js";
+import {  displayMainPage} from "../controllers/index.controller.server.js";
 
 const router = Router ();
 
-router.get('/hello1', helloNODEJs);
-router.get('/html', helloHTML);
+router.get('/MainPage', displayMainPage);
+
 
 
 export default router;
