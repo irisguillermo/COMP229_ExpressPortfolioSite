@@ -7,6 +7,8 @@ import path, {dirname} from 'path';
 import {fileURLToPath} from 'url';
 const __dirname = dirname (fileURLToPath(import.meta.url))
 
+import { Secret } from './config/config.js';
+
 import router from './app/routes/index.route.server.js'
 
 const app = express();
@@ -21,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/client')));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
-   secret: 'topSecret',
+   secret: Secret,
    saveUninitialized: false,
    resave: false
 }));
