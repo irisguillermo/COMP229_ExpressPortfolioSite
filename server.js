@@ -13,6 +13,8 @@ import router from './app/routes/index.route.server.js'
 
 const app = express();
 
+
+
 app.set('views', path.join (__dirname, '/app/views'))
 app.set('view engine', 'ejs');
 
@@ -27,6 +29,8 @@ app.use(session({
    saveUninitialized: false,
    resave: false
 }));
+
+
 
 app.use('/', router);
 
